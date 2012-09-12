@@ -19,7 +19,7 @@ import scalafx.stage.Stage
 object DockFX extends JFXApp {
 
   stage = new Stage() {
-    title = "Hello World!"; width = 650; height = 450
+    //title = "Hello World!"; width = 650; height = 450
     scene = new Scene(new Group {children = List(
 	    new ImageView {
 	      translateX = 100; translateY = 200
