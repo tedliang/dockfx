@@ -12,8 +12,8 @@ import scalafx.scene.input.MouseEvent
 
 class BouncingIcon(url: String) extends ImageView {
 
-  super.image = new Image(url)
-  super.effect = new Reflection
+  image = new Image(url)
+  effect = new Reflection
 
   var mouseIn = false
   val bouncer = new Timeline {
