@@ -19,7 +19,7 @@ import scalafx.stage.Stage
 object DockFX extends JFXApp {
 
   stage = new Stage() {
-    //title = "Hello World!"; width = 650; height = 450
+    initStyle(StageStyle.TRANSPARENT)
     scene = new Scene(new Group {children = List(
 	    new ImageView {
 	      translateX = 100; translateY = 200
@@ -35,6 +35,5 @@ object DockFX extends JFXApp {
 	    }
     )}, 550, 300) { fill = TRANSPARENT }
   }
-  stage.initStyle(StageStyle.TRANSPARENT);
 
 }
