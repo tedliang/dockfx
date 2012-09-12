@@ -14,11 +14,10 @@ class BouncingIcon(url: String) extends ImageView {
 
   image = new Image(url)
   effect = new Reflection
+  onMouseEntered = bouncer play
 
-  var mouseIn = false
   val bouncer = new Timeline {
-    cycleCount = 1
-    onFinished = (_: ActionEvent) => if(mouseIn) play else scaleX = 1.0
+    onFinished = (_: ActionEvent) => if(hover()) play else scaleX = 1.0
     keyFrames = Seq(
       at (  0 ms) {Set(scaleX -> 1.2, scaleY -> 1.0, translateY -> 0.0)},
       at (100 ms) {Set(scaleX -> 1.0, scaleY -> 1.2, translateY -> 0.0)},
@@ -28,7 +27,5 @@ class BouncingIcon(url: String) extends ImageView {
     )
   }
 
-  onMouseEntered = (_: MouseEvent) => {mouseIn = true; bouncer play}
-  onMouseExited  = (_: MouseEvent) => mouseIn = false
 
 }
