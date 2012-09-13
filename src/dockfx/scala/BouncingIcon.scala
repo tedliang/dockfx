@@ -17,7 +17,6 @@ class BouncingIcon(url: String) extends ImageView {
   onMouseEntered = bouncer play
 
   val bouncer = new Timeline {
-    onFinished = (_: ActionEvent) => if(hover()) play else scaleX = 1.0
     keyFrames = Seq(
       at (  0 ms) {Set(scaleX -> 1.2, scaleY -> 1.0, translateY ->   0.0)},
       at (100 ms) {Set(scaleX -> 1.0, scaleY -> 1.2, translateY ->   0.0)},
@@ -25,6 +24,7 @@ class BouncingIcon(url: String) extends ImageView {
       at (500 ms) {Set(scaleX -> 1.0, scaleY -> 1.2, translateY ->   0.0)},
       at (600 ms) {Set(scaleX -> 1.2, scaleY -> 1.0, translateY ->   0.0)}
     )
+    onFinished = (_: ActionEvent) => if(hover()) play else scaleX = 1.0
   }
 
 }

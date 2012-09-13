@@ -1,16 +1,22 @@
 package dockfx
 
 import javafx.stage.StageStyle
-import scalafx.Includes._
+import scalafx.Includes.actionEventClosureWrapper
+import scalafx.Includes.at
+import scalafx.Includes.double2DurationHelper
+import scalafx.Includes.eventClosureWrapper
+import scalafx.Includes.jfxDuration2sfx
+import scalafx.Includes.jfxReadOnlyBooleanProperty2sfx
+import scalafx.Includes.mouseEventClosureWrapper
 import scalafx.animation.Tweenable.tweenable2KeyFrame
 import scalafx.animation.Timeline
 import scalafx.application.JFXApp
 import scalafx.event.ActionEvent
 import scalafx.scene.Group.sfxGroup2jfx
 import scalafx.scene.effect.Reflection
+import scalafx.scene.image.ImageView.sfxImageView2jfx
 import scalafx.scene.image.Image.sfxImage2jfx
 import scalafx.scene.image.Image
-import scalafx.scene.image.ImageView.sfxImageView2jfx
 import scalafx.scene.image.ImageView
 import scalafx.scene.input.MouseEvent.sfxMouseEvent2jfx
 import scalafx.scene.input.MouseEvent
@@ -24,7 +30,7 @@ import scalafx.stage.Stage
 
 object DockFX extends JFXApp {
 
-  stage = new Stage() {
+  stage = new Stage {
     scene = new Scene(new Group(
 	    new ImageView {
 	      translateX = 100; translateY = 200
