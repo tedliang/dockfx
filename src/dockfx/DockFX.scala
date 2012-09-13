@@ -48,11 +48,11 @@ object DockFX extends JFXApp {
 			  onMouseEntered = bouncer play
 			  val bouncer = new Timeline {
 			    keyFrames = Seq(
-			      at (  0 ms) {Set(scaleX -> 1.2, scaleY -> 1.0, translateY ->   0.0)},
-			      at (100 ms) {Set(scaleX -> 1.0, scaleY -> 1.2, translateY ->   0.0)},
-			      at (300 ms) {Set(scaleX -> 1.0, scaleY -> 1.0, translateY -> -20.0)},
-			      at (500 ms) {Set(scaleX -> 1.0, scaleY -> 1.2, translateY ->   0.0)},
-			      at (600 ms) {Set(scaleX -> 1.2, scaleY -> 1.0, translateY ->   0.0)}
+			      at(  0 ms)(Set(scaleX -> 1.2, scaleY -> 1.0, translateY ->   0.0)),
+			      at(100 ms)(Set(scaleX -> 1.0, scaleY -> 1.2, translateY ->   0.0)),
+			      at(300 ms)(Set(scaleX -> 1.0, scaleY -> 1.0, translateY -> -20.0)),
+			      at(500 ms)(Set(scaleX -> 1.0, scaleY -> 1.2, translateY ->   0.0)),
+			      at(600 ms)(Set(scaleX -> 1.2, scaleY -> 1.0, translateY ->   0.0))
 			    )
 			    onFinished = (_: ActionEvent) => if(hover()) play else scaleX = 1.0
 			  }
