@@ -3,6 +3,7 @@ package dockfx
 import javafx.stage.StageStyle
 import scalafx.Includes.actionEventClosureWrapper
 import scalafx.Includes.at
+import scalafx.Includes.when
 import scalafx.Includes.double2DurationHelper
 import scalafx.Includes.eventClosureWrapper
 import scalafx.Includes.jfxDuration2sfx
@@ -27,6 +28,7 @@ import scalafx.scene.paint.Color.sfxColor2jfx
 import scalafx.scene.Group
 import scalafx.scene.Scene
 import scalafx.stage.Stage
+import scalafx.beans.value.ObservableValue.sfxObservableValue2jfx
 
 object DockFX extends JFXApp {
 
@@ -34,10 +36,9 @@ object DockFX extends JFXApp {
     scene = new Scene(new Group(
 	    new ImageView {
 	      translateX = 100; translateY = 200
-	      image = new Image("images/dock1.png")
-	      onMouseClicked = (e: MouseEvent) =>
-	        image = new Image("images/dock%s.png" format
-	          (if (e isPrimaryButtonDown) "1" else "2"))
+	      val img1 = new Image("images/dock1.png").delegate
+	      val img2 = new Image("images/dock2.png").delegate
+	      image <== when (hover) then img2 otherwise img1
 	    },
 	    new HBox(20) {
 	      translateX = 150; translateY = 220
