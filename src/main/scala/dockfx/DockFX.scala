@@ -36,8 +36,8 @@ object DockFX extends JFXApp {
     scene = new Scene(new Group(
 	    new ImageView {
 	      translateX = 100; translateY = 200
-	      val img1 = new Image("images/dock1.png").delegate
-	      val img2 = new Image("images/dock2.png").delegate
+	      val img1 = new Image("images/dock1.png")
+	      val img2 = new Image("images/dock2.png")
 	      image <== when (hover) choose img2 otherwise img1
 	    },
 	    new HBox(20) {
