@@ -1,22 +1,19 @@
 package dockfx.split
 
-import scalafx.stage.StageStyle
 import scalafx.Includes.mouseEventClosureWrapper
 import scalafx.application.JFXApp
-import scalafx.scene.Group.sfxGroup2jfx
-import scalafx.scene.image.ImageView.sfxImageView2jfx
-import scalafx.scene.image.Image.sfxImage2jfx
-import scalafx.scene.image.Image
-import scalafx.scene.image.ImageView
-import scalafx.scene.input.MouseEvent.sfxMouseEvent2jfx
-import scalafx.scene.input.MouseEvent
-import scalafx.scene.layout.HBox.sfxHBox2jfx
-import scalafx.scene.layout.HBox
-import scalafx.scene.paint.Color.TRANSPARENT
-import scalafx.scene.paint.Color.sfxColor2jfx
+import scalafx.application.JFXApp.PrimaryStage
 import scalafx.scene.Group
 import scalafx.scene.Scene
-import scalafx.application.JFXApp.PrimaryStage
+import scalafx.scene.image.Image
+import scalafx.scene.image.ImageView
+import scalafx.scene.image.ImageView.sfxImageView2jfx
+import scalafx.scene.input.MouseEvent
+import scalafx.scene.input.MouseEvent.sfxMouseEvent2jfx
+import scalafx.scene.layout.HBox
+import scalafx.scene.layout.HBox.sfxHBox2jfx
+import scalafx.scene.paint.Color.TRANSPARENT
+import scalafx.stage.StageStyle
 
 object DockFX extends JFXApp {
 

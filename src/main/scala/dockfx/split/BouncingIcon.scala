@@ -5,12 +5,10 @@ import scalafx.Includes.at
 import scalafx.Includes.double2DurationHelper
 import scalafx.Includes.eventClosureWrapper
 import scalafx.Includes.jfxDuration2sfx
-import scalafx.Includes.jfxReadOnlyBooleanProperty2sfx
-import scalafx.animation.Tweenable.tweenable2KeyFrame
 import scalafx.animation.Timeline
+import scalafx.animation.Tweenable.tweenable2KeyFrame
 import scalafx.event.ActionEvent
 import scalafx.scene.effect.Reflection
-import scalafx.scene.image.Image.sfxImage2jfx
 import scalafx.scene.image.Image
 import scalafx.scene.image.ImageView
 

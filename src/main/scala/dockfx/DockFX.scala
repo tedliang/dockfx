@@ -1,34 +1,28 @@
 package dockfx
 
-import scalafx.stage.StageStyle
 import scalafx.Includes.actionEventClosureWrapper
 import scalafx.Includes.at
-import scalafx.Includes.when
 import scalafx.Includes.double2DurationHelper
 import scalafx.Includes.eventClosureWrapper
 import scalafx.Includes.jfxDuration2sfx
-import scalafx.Includes.jfxReadOnlyBooleanProperty2sfx
-import scalafx.Includes.mouseEventClosureWrapper
-import scalafx.animation.Tweenable.tweenable2KeyFrame
+import scalafx.Includes.when
 import scalafx.animation.Timeline
+import scalafx.animation.Tweenable.tweenable2KeyFrame
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
+import scalafx.beans.property.ReadOnlyBooleanProperty.sfxReadOnlyBooleanProperty2jfx
 import scalafx.event.ActionEvent
-import scalafx.scene.Group.sfxGroup2jfx
-import scalafx.scene.effect.Reflection
-import scalafx.scene.image.ImageView.sfxImageView2jfx
-import scalafx.scene.image.Image.sfxImage2jfx
-import scalafx.scene.image.Image
-import scalafx.scene.image.ImageView
-import scalafx.scene.input.MouseEvent.sfxMouseEvent2jfx
-import scalafx.scene.input.MouseEvent
-import scalafx.scene.layout.HBox.sfxHBox2jfx
-import scalafx.scene.layout.HBox
-import scalafx.scene.paint.Color.TRANSPARENT
-import scalafx.scene.paint.Color.sfxColor2jfx
 import scalafx.scene.Group
 import scalafx.scene.Scene
-import scalafx.beans.value.ObservableValue.sfxObservableValue2jfx
+import scalafx.scene.effect.Reflection
+import scalafx.scene.image.Image
+import scalafx.scene.image.Image.sfxImage2jfx
+import scalafx.scene.image.ImageView
+import scalafx.scene.image.ImageView.sfxImageView2jfx
+import scalafx.scene.layout.HBox
+import scalafx.scene.layout.HBox.sfxHBox2jfx
+import scalafx.scene.paint.Color.TRANSPARENT
+import scalafx.stage.StageStyle
 
 object DockFX extends JFXApp {
 
