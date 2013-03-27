@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dockfx.java;
+package dockfx;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;

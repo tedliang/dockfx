@@ -1,6 +1,6 @@
-package dockfx.scala
+package dockfx.split
 
-import javafx.stage.StageStyle
+import scalafx.stage.StageStyle
 import scalafx.Includes.mouseEventClosureWrapper
 import scalafx.application.JFXApp
 import scalafx.scene.Group.sfxGroup2jfx
@@ -16,11 +16,11 @@ import scalafx.scene.paint.Color.TRANSPARENT
 import scalafx.scene.paint.Color.sfxColor2jfx
 import scalafx.scene.Group
 import scalafx.scene.Scene
-import scalafx.stage.Stage
+import scalafx.application.JFXApp.PrimaryStage
 
 object DockFX extends JFXApp {
 
-  stage = new Stage {
+  stage = new PrimaryStage {
     scene = new Scene(new Group(
 	    new ImageView {
 	      translateX = 100; translateY = 200
@@ -35,7 +35,7 @@ object DockFX extends JFXApp {
 	        yield new BouncingIcon("icons/" + name + "-32.png")
 	    }
     ), 550, 300) {fill = TRANSPARENT}
-    initStyle(StageStyle.TRANSPARENT)
   }
+  stage.initStyle(StageStyle.TRANSPARENT)
 
 }

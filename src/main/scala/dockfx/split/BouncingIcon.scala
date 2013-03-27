@@ -1,4 +1,4 @@
-package dockfx.scala
+package dockfx.split
 
 import scalafx.Includes.actionEventClosureWrapper
 import scalafx.Includes.at

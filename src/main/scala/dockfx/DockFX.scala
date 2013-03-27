@@ -1,6 +1,6 @@
 package dockfx
 
-import javafx.stage.StageStyle
+import scalafx.stage.StageStyle
 import scalafx.Includes.actionEventClosureWrapper
 import scalafx.Includes.at
 import scalafx.Includes.when
@@ -12,6 +12,7 @@ import scalafx.Includes.mouseEventClosureWrapper
 import scalafx.animation.Tweenable.tweenable2KeyFrame
 import scalafx.animation.Timeline
 import scalafx.application.JFXApp
+import scalafx.application.JFXApp.PrimaryStage
 import scalafx.event.ActionEvent
 import scalafx.scene.Group.sfxGroup2jfx
 import scalafx.scene.effect.Reflection
@@ -27,18 +28,17 @@ import scalafx.scene.paint.Color.TRANSPARENT
 import scalafx.scene.paint.Color.sfxColor2jfx
 import scalafx.scene.Group
 import scalafx.scene.Scene
-import scalafx.stage.Stage
 import scalafx.beans.value.ObservableValue.sfxObservableValue2jfx
 
 object DockFX extends JFXApp {
 
-  stage = new Stage {
+  stage = new PrimaryStage {
     scene = new Scene(new Group(
 	    new ImageView {
 	      translateX = 100; translateY = 200
 	      val img1 = new Image("images/dock1.png").delegate
 	      val img2 = new Image("images/dock2.png").delegate
-	      image <== when (hover) then img2 otherwise img1
+	      image <== when (hover) choose img2 otherwise img1
 	    },
 	    new HBox(20) {
 	      translateX = 150; translateY = 220
@@ -60,7 +60,7 @@ object DockFX extends JFXApp {
 	      	}
 	    }
     ), 550, 300) {fill = TRANSPARENT}
-    initStyle(StageStyle.TRANSPARENT)
   }
+  stage.initStyle(StageStyle.TRANSPARENT)
 
 }
