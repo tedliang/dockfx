@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package dockfx;
+package dockfxj;
 
 import java.awt.Desktop;
 import java.io.File;
