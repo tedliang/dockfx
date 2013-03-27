@@ -4,6 +4,7 @@
 .cache
 bin
 target
+lib_managed
 
 # Package Files #
 *.jar
