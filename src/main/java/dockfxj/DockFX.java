@@ -4,10 +4,6 @@
  */
 package dockfxj;
 
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
-import java.net.URI;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -21,8 +17,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import javax.swing.JFileChooser;
 
 /**
  *
@@ -66,17 +60,10 @@ public class DockFX extends Application {
 		};
 
 		HBox box = new HBox(20);
-		for (int i = 0; i < images.length; i++) {
-			BouncingIcon icon = new BouncingIcon(new Image("icons/" + images[i]));
+		for (String imageName : images) {
+			BouncingIcon icon = new BouncingIcon(new Image("icons/" + imageName));
 			icon.setEffect(new Reflection());
 			box.getChildren().add(icon);
-			final String action = images[i].split("-")[0].toLowerCase();
-			icon.setOnMouseClicked(new EventHandler<MouseEvent>() {
-				@Override
-				public void handle(MouseEvent t) {
-					mouseClicked(action);
-				}
-			});
 		}
 
 		box.setTranslateX(150);
@@ -86,32 +73,5 @@ public class DockFX extends Application {
 		stage.setScene(new Scene(root, 550, 300, Color.TRANSPARENT));
 		stage.initStyle(StageStyle.TRANSPARENT);
 		stage.show();
-	}
-
-	public void mouseClicked(String action) {
-		switch (action) {
-			case "user":
-				try {
-					// open user home
-//					System.out.println(System.getenv().keySet().toString());
-					System.out.println("HOME = " + System.getenv("HOME"));
-					Desktop.getDesktop().open(new File(System.getenv("HOME")));
-				} catch (IOException ex) {
-					// No implementation for your OS
-					// fallback
-					JFileChooser chooser = new JFileChooser(new File(System.getenv("HOME")));
-					if ( chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-						File selectedFile = chooser.getSelectedFile();
-						// do something with selectedFile
-					}
-				}
-				break;
-			case "internet":
-				try {
-					Desktop.getDesktop().browse(new URI("http://www.google.com"));
-				} catch (Exception ex) {
-				}
-				break;
-		}
 	}
 }

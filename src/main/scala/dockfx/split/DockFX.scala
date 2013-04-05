@@ -21,10 +21,11 @@ object DockFX extends JFXApp {
     scene = new Scene(new Group(
 	    new ImageView {
 	      translateX = 100; translateY = 200
-	      image = new Image("images/dock1.png")
+	      val img1 = new Image("images/dock1.png")
+	      val img2 = new Image("images/dock2.png")
+	      image = img1
 	      onMouseClicked = (e: MouseEvent) =>
-	        image = new Image("images/dock%s.png" format
-	          (if (e isPrimaryButtonDown) "1" else "2"))
+	        image = if (e isPrimaryButtonDown) img1 else img2
 	    },
 	    new HBox(20) {
 	      translateX = 150; translateY = 220
